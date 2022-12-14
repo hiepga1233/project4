@@ -1,0 +1,88 @@
+(.devops) Dinhs-MacBook-Pro:project4 dinhhoang$ sudo sh run_kubernetes.sh 
+Error from server (AlreadyExists): pods "project4" already exists
+NAME       READY   STATUS    RESTARTS   AGE
+project4   1/1     Running   0          2m35s
+Forwarding from 127.0.0.1:8000 -> 80
+Forwarding from [::1]:8000 -> 80
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Handling connection for 8000
+
+
+Dinhs-MacBook-Pro:project4 dinhhoang$ sudo sh make_prediction.sh 
+Password:
+Port: 8000
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}
+Dinhs-MacBook-Pro:project4 dinhhoang$ kubectl logs project4
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 129-516-115
+[2022-12-14 04:15:14,912] INFO in app: JSON payload: 
+{'CHAS': {'0': 0}, 'RM': {'0': 6.575}, 'TAX': {'0': 296.0}, 'PTRATIO': {'0': 15.3}, 'B': {'0': 396.9}, 'LSTAT': {'0': 4.98}}
+[2022-12-14 04:15:14,930] INFO in app: Inference payload DataFrame: 
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2022-12-14 04:15:14,944] INFO in app: Scaling Payload: 
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2022-12-14 04:15:14,948] INFO in app: Prediction: [20.35373177134412]
+127.0.0.1 - - [14/Dec/2022 04:15:14] "POST /predict HTTP/1.1" 200 -
+Dinhs-MacBook-Pro:project4 dinhhoang$ 

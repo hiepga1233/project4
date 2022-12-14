@@ -4,7 +4,7 @@
 
 # Step 1:
 # This is your Docker ID/path
-dockerpath=hoangga1233/project4
+dockerpath=hoangga1233/project4:1.0.0
 
 # Step 2
 # Run the Docker Hub container with kubernetes
